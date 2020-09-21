@@ -1,0 +1,180 @@
+html {
+  margin: 0 auto;
+  width: 100%;
+}
+
+body {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-title {
+  font-family: "Fugaz One", cursive;
+  font-size: 36px;
+}
+
+.nav-link-text {
+  margin: 0 15px;
+  color: #000;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+}
+
+.nav-link-text:active {
+  color: #ff8800;
+}
+
+.nav-link-text:hover {
+  color: #ff8800;
+  text-decoration-line: none;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 768px;
+  min-height: 400px;
+  height: 600px;
+  background-image: url(../img/bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+
+.head-highlight {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.img-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.head-text {
+  z-index: 1;
+  font-size: 60px;
+  font-family: "Squada One", cursive;
+  padding: 25px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.words {
+  color: #ff8800;
+  margin: 0;
+  padding: 0;
+}
+
+.second {
+  padding-top: 100px;
+  width: 100%;
+  height: 400px;
+}
+
+.second-text {
+  font-family: "Squada One", cursive;
+  font-size: 30px;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-image {
+  transition-duration: 0.3s;
+}
+
+.card-image:hover {
+  transform: scale(1.3, 1.3);
+  transition-duration: 0.3s;
+}
+
+.img-arrow {
+  position: absolute;
+}
+
+.img-arrow-first {
+  transform: scaleY(-1) rotate(-40deg);
+  top: -50px;
+  right: -70px;
+}
+
+.img-arrow-second {
+  transform: rotate(-40deg);
+  bottom: -50px;
+  right: -70px;
+}
+
+.img-arrow-third {
+  transform: scaleY(-1) rotate(-40deg);
+  top: -50px;
+  right: -70px;
+}
+
+.cards {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.blacklayer {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  background-image: url(../img/search.png);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 15px;
+  width: 91%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: content-box;
+}
+
+.cards-block {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+}
+
+.cards-block:hover .blacklayer {
+  display: flex;
+}
+
+.img-portfolio {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .img-arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-title {
+    font-size: 24px;
+  }
+  .navbar-title img {
+    width: 30px;
+    height: 30px;
+  }
+}
