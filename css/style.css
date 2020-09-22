@@ -260,7 +260,8 @@ body {
     display: flex;
   }
   .img-portfolio {
-    height: 40vw;
+    min-height: 300px;
+    height: 56vw;
     object-fit: cover;
   }
   .second {
@@ -269,5 +270,11 @@ body {
   }
   .third {
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .email, .phone {
+    font-size: 14px;
   }
 }
