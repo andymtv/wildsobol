@@ -14,7 +14,7 @@
 <body class="bg-light">
     <section class="first">
       <a name="first"></a>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand navbar-title" href="#">
                     <img src="img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
                     Wild Sobol
@@ -29,7 +29,7 @@
                       <a class="nav-link-text" href="#first">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link-text" href="#second">How we work</a>
+                      <a class="nav-link-text" href="#second">How do we work</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-text" href="#">Portfolio</a>
@@ -42,7 +42,7 @@
               </nav>
         <div class="head">
           <div class="head-highlight">
-            <pre class="head-text">We don't just renovate. <br>We help you to make <p class="words">your DREAMS come true.</p></pre>
+            <div class="head-text">We don't just renovate. <br><div class="words">We help you to make<div class="words-colored">your DREAMS come true.</div></div></div>
           </div>
         </div>
     </section>
@@ -50,22 +50,22 @@
       <a name="second"></a>
       <div class="container-fluid">
         <div class="row row-second">
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 d-flex flex-column justify-content-center align-items-center card-container">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6 d-flex flex-column justify-content-center align-items-center card-container">
             <img src="img/idea.png" width="75" height="75" alt="thinking" class="m-4 card-image">
             <img src="img/decrease.png" alt="arrow" width="125" height="100" class="img-arrow img-arrow-first">
             <p class="second-text">You are thinking</p>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 d-flex flex-column justify-content-center align-items-center card-container">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6 d-flex flex-column justify-content-center align-items-center card-container">
             <img src="img/sketch.png" width="75" height="75" alt="planning" class="m-4 card-image">
             <img src="img/decrease.png" alt="arrow" width="125" height="100" class="img-arrow img-arrow-second">
             <p class="second-text">We are planning</p>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 d-flex flex-column justify-content-center align-items-center card-container">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6 d-flex flex-column justify-content-center align-items-center card-container">
             <img src="img/tools.png" width="75" height="75" alt="creating" class="m-4 card-image">
             <img src="img/decrease.png" alt="arrow" width="125" height="100" class="img-arrow img-arrow-third">
             <p class="second-text">Then creating</p>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 d-flex flex-column justify-content-center align-items-center card-container">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6 d-flex flex-column justify-content-center align-items-center card-container">
             <img src="img/like.png" width="75" height="75" alt="like" class="m-4 card-image">
             <p class="second-text">You are happy!</p>
           </div>
@@ -74,121 +74,308 @@
     </section>
     <section class="third mt-5">
       <div class="container-fluid bg-light">
-        <div class="row">
+        <div class="row" data-toggle="modal" data-target="#ModalCenter">
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a1.jpg" class="img-portfolio" alt="">
+            <div class="cards-block" >
+            <img src="img/portfolio/a1.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="0">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a2.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a2.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="1">
             <div class="blacklayer">
               
             </div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a3.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a3.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="2">
             <div class="blacklayer">
 
             </div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a4.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a4.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="3">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" data-toggle="modal" data-target="#ModalCenter">
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a5.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a5.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="4">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a6.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a6.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="5">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a7.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a7.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="6">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a8.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a8.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="7">
             <div class="blacklayer"></div>
-          </a>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a9.jpg" class="img-portfolio" alt="">
-            <div class="blacklayer"></div>
-          </a>
-          </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a10.jpg" class="img-portfolio" alt="">
-            <div class="blacklayer"></div>
-          </a>
-          </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a11.jpg" class="img-portfolio" alt="">
-            <div class="blacklayer"></div>
-          </a>
-          </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a12.jpg" class="img-portfolio" alt="">
-            <div class="blacklayer"></div>
-          </a>
           </div>
         </div>
-        <div class="row">
+        <div class="row" data-toggle="modal" data-target="#ModalCenter">
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a13.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a9.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="8">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a14.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a10.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="9">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a15.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a11.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="10">
             <div class="blacklayer"></div>
-          </a>
+          </div>
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
-            <a href="#" class="cards-block">
-            <img src="img/portfolio/a16.jpg" class="img-portfolio" alt="">
+            <div class="cards-block">
+            <img src="img/portfolio/a12.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="11">
             <div class="blacklayer"></div>
-            </a>
           </div>
+          </div>
+        </div>
+        <div class="row" data-toggle="modal" data-target="#ModalCenter">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
+            <div class="cards-block">
+            <img src="img/portfolio/a13.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="12">
+            <div class="blacklayer"></div>
+          </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
+            <div class="cards-block">
+            <img src="img/portfolio/a14.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="13">
+            <div class="blacklayer"></div>
+          </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
+            <div class="cards-block">
+            <img src="img/portfolio/a15.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="14">
+            <div class="blacklayer"></div>
+          </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 cards">
+            <div class="cards-block">
+            <img src="img/portfolio/a16.jpg" class="img-portfolio" alt="" data-target="#carouselExample" data-slide-to="15">
+            <div class="blacklayer"></div>
+            </div>
+          </div>
+           
+          <div class="cards-slider">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="12"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="13"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="14"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="15"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a4.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a5.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a6.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a7.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a8.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a9.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a10.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a11.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a12.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a13.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a14.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a15.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a16.jpg" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+    <section class="fourth bg-light">
+      <div class="contacts">
+        <a href="callto:+48111222333" class="phone">Call to Us: +48-111-222-333</a>
+        <a href="mailto:example@example.com" class="email">Write to Us: example@examle.com</a>
+      </div>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+      <div class=" modal-lg modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+
+            <div id="carouselExample" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExample" data-slide-to="0"></li>
+                <li data-target="#carouselExample" data-slide-to="1"></li>
+                <li data-target="#carouselExample" data-slide-to="2"></li>
+                <li data-target="#carouselExample" data-slide-to="3"></li>
+                <li data-target="#carouselExample" data-slide-to="4"></li>
+                <li data-target="#carouselExample" data-slide-to="5"></li>
+                <li data-target="#carouselExample" data-slide-to="6"></li>
+                <li data-target="#carouselExample" data-slide-to="7"></li>
+                <li data-target="#carouselExample" data-slide-to="8"></li>
+                <li data-target="#carouselExample" data-slide-to="9"></li>
+                <li data-target="#carouselExample" data-slide-to="10"></li>
+                <li data-target="#carouselExample" data-slide-to="11"></li>
+                <li data-target="#carouselExample" data-slide-to="12"></li>
+                <li data-target="#carouselExample" data-slide-to="13"></li>
+                <li data-target="#carouselExample" data-slide-to="14"></li>
+                <li data-target="#carouselExample" data-slide-to="15"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a1.jpg" alt="First slide" >
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a2.jpg" alt="Second slide" >
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a4.jpg" alt="Fourth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a5.jpg" alt="Fifth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a6.jpg" alt="Sixth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a7.jpg" alt="Seventh slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a8.jpg" alt="Eigth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a9.jpg" alt="Nineth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a10.jpg" alt="Tenth slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a11.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a12.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a13.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a14.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a15.jpg">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 img-portfolio" src="img/portfolio/a16.jpg">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+      </div>
 
 
 
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
