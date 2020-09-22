@@ -94,6 +94,7 @@ body {
 .second-text {
   font-family: "Squada One", cursive;
   font-size: 30px;
+  text-align: center;
 }
 
 .card-container {
@@ -202,6 +203,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
 }
 
 .phone {
