@@ -1,4 +1,6 @@
 $(window).ready(function(){
+
+// Show or hide Modal Slider
     if($(window).width() > 900) {
         let modalWithSlider = `<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
         <div class=" modal-lg modal-dialog modal-dialog-centered" role="document">
@@ -27,8 +29,6 @@ $(window).ready(function(){
                   <li data-target="#carouselExample" data-slide-to="11"></li>
                   <li data-target="#carouselExample" data-slide-to="12"></li>
                   <li data-target="#carouselExample" data-slide-to="13"></li>
-                  <li data-target="#carouselExample" data-slide-to="14"></li>
-                  <li data-target="#carouselExample" data-slide-to="15"></li>
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -62,22 +62,16 @@ $(window).ready(function(){
                     <img class="d-block w-100 img-portfolio" src="img/portfolio/a10.jpg" alt="Tenth slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a11.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a11.jpg" alt="Eleventh slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a12.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a12.jpg" alt="Twelveth slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a13.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a13.jpg" alt="Thirteenth slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a14.jpg">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a15.jpg">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a16.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a14.jpg" alt="Fourteenth slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
@@ -93,10 +87,152 @@ $(window).ready(function(){
             $('script').before($(modalWithSlider))
     }
     if($(window).width() <= 900){
-        $('.modal').detach()
-    } 
+        $('#ModalCenter').detach()
+    }
+
+// Show and hide logo if navbar is not collapsed
+let btnNavToggler = document.querySelector('.navbar-toggler');
+let navCollapse = document.querySelector('.navbar-collapse');
+btnNavToggler.addEventListener('click', () => {
+    console.log(btnNavToggler.getAttribute('aria-expanded'));
+    let logo = document.querySelector('.logo');
+    setTimeout(() => {
+      if(btnNavToggler.getAttribute('aria-expanded') == 'true'){
+        btnNavToggler.style.border = 'none';
+        logo.style.display = 'none';
+      } else {
+        navCollapse.classList.remove('collapsing');
+        navCollapse.classList.add('collapse');
+        btnNavToggler.style.border = '1px solid rgba(0,0,0,0.1)';
+        logo.style.display = 'block';
+      }
+    }, 20)
 });
 
+// Init Call button
+let btnCall = document.querySelector('.btn-call');
+
+// Add click animation on Call Button
+btnCall.addEventListener('click', () => {
+  btnCall.classList.add('clicked');
+    setTimeout(() => {
+      btnCall.classList.remove('clicked');
+      }, 300);
+    });
+
+// Add shuffle animation on Call Button
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    animFromBottom(btnCall);
+    setTimeout(() => {
+      animShuffle(btnCall);
+      btnCall.style.bottom = '40px';
+    }, 300);
+  }, 300);
+});
+
+// Shuffle Call Button time after time
+setInterval(() => {
+  animShuffle(btnCall);
+}, 3000);
+
+// Show or hide navbar after page is loaded
+window.addEventListener('load', function() {
+  let firstBlock = document.querySelector('.first');
+  let firstBlockBottom = firstBlock.getBoundingClientRect().bottom;
+  let headNavBar = document.querySelector('.navbar');
+  let logo = document.querySelector('.logo');
+  let navLinkText = document.querySelectorAll('.nav-link-text');
+  if(firstBlockBottom < 525)
+  {
+    logo.style.filter = 'invert(0)';
+    headNavBar.classList.add('bgIn');
+    setTimeout(() => {
+      headNavBar.style.backgroundColor = '#f8f9fa';
+    }, 250)
+    btnNavToggler.style.filter = 'invert(0)';
+    navLinkText.forEach(item => {
+      item.style.color = '#000';
+
+    });
+  } else if (firstBlockBottom > 525){
+    logo.style.filter = 'invert(1)';
+    btnNavToggler.style.filter = 'invert(1)';
+    headNavBar.style.backgroundColor = '#f8f9fa00';
+    console.log(headNavBar.style.background);
+    navLinkText.forEach(item => {
+      item.style.color = '#fff';
+  });
+}
+});
+
+// Ivert head navbar while scrolling
+window.addEventListener('scroll', function() {
+      let firstBlock = document.querySelector('.first');
+      let firstBlockBottom = firstBlock.getBoundingClientRect().bottom;
+      let thirdBlock = document.querySelector('.third');
+      let thirdBlockTop = thirdBlock.getBoundingClientRect().top;
+      let headNavBar = document.querySelector('.navbar');
+      let logo = document.querySelector('.logo');
+      let navLinkText = document.querySelectorAll('.nav-link-text');
+
+      if(firstBlockBottom < 500)
+      {
+        logo.style.filter = 'invert(0)';
+        btnNavToggler.style.filter = 'invert(0)';
+        headNavBar.classList.add('bgIn');
+        headNavBar.style.backgroundColor = '#f8f9fa';
+        navLinkText.forEach(item => {
+          item.style.color = '#000';
+          item.addEventListener('mouseover', () => {item.style.color = '#ff5e00'});
+          item.addEventListener('mouseout', () => {item.style.color = '#000'});
+        });
+
+      } 
+      if (firstBlockBottom > 600){
+        logo.style.filter = 'invert(1)';
+        btnNavToggler.style.filter = 'invert(1)';
+        headNavBar.classList.remove('bgIn');
+        headNavBar.style.backgroundColor = '#f8f9fa00';
+        navLinkText.forEach(item => {
+          item.style.color = '#fff';
+          item.addEventListener('mouseover', () => {item.style.color = '#ff5e00'});
+          item.addEventListener('mouseout', () => {item.style.color = '#fff'});
+        });
+      }
+      if(thirdBlockTop < 100){
+        headNavBar.style.opacity = 0;
+        console.log(thirdBlockTop);
+      } 
+      if (thirdBlockTop > 200){
+        headNavBar.style.opacity = 1;
+      }
+});
+
+
+// Show and hide head navbar while scrolling
+window.addEventListener('scroll', function() {
+  
+});
+
+
+// Changing head background
+let headBg = document.querySelector('.head-highlight');
+let count = 0;
+setTimeout(() => {
+
+  setInterval(() => {
+    if(count < 9){
+      count++;
+      bgChange(headBg, count);
+    } else {
+        count = 0;
+        bgChange(headBg, count);
+    }
+  }, 5000);
+}, 2000)
+
+// Hide portfolio galery and add slider galery
 $(window).resize(function(){
     if($(window).width() > 900) {
         let modalWithSlider = `<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
@@ -126,8 +262,6 @@ $(window).resize(function(){
                   <li data-target="#carouselExample" data-slide-to="11"></li>
                   <li data-target="#carouselExample" data-slide-to="12"></li>
                   <li data-target="#carouselExample" data-slide-to="13"></li>
-                  <li data-target="#carouselExample" data-slide-to="14"></li>
-                  <li data-target="#carouselExample" data-slide-to="15"></li>
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -161,22 +295,16 @@ $(window).resize(function(){
                     <img class="d-block w-100 img-portfolio" src="img/portfolio/a10.jpg" alt="Tenth slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a11.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a11.jpg" alt="Eleventh slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a12.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a12.jpg" alt="Twelveth slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a13.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a13.jpg" alt="Thirteenth slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a14.jpg">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a15.jpg">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a16.jpg">
+                    <img class="d-block w-100 img-portfolio" src="img/portfolio/a14.jpg" alt="Fourteenth slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
@@ -197,3 +325,84 @@ $(window).resize(function(){
  
     });
 
+
+
+// Showing Contact Modal Window after click on button
+let contactModal = document.querySelector('#contactModal');
+btnCall.addEventListener('click', () => {
+  setTimeout(() => {
+      if(contactModal.classList.contains('showed')){
+    btnCall.style.display = 'none';
+  }
+  },500);
+});
+
+
+// Function to make PopUpFromBottom animation
+function animFromBottom(el){
+    el.style.display = 'block';
+    el.classList.add('animShow');
+    el.style.bottom = '40px';
+    setTimeout(() => {
+      el.classList.remove('animShow');
+    }, 2000)
+}
+
+// Function to make shuffle animation
+function animShuffle(el){
+    el.classList.add('shuffled');
+      setTimeout(() => {
+        el.classList.remove('shuffled');
+      }, 2000);
+}
+
+
+
+
+
+
+// Function to change background with animation
+function bgChange(el, n){
+let end = 10000;
+let step = 1000;
+let stepCount = 0;
+
+    let timer1 = setInterval(() => {
+
+        if(stepCount > 9){
+            el.style.backgroundImage = `url(./img/bg${n}.jpg)`;
+            clearInterval(timer1);    
+        }
+        
+        el.style.opacity = step / (end / ((end / 1000) - stepCount));
+        stepCount++;
+    }, 24);
+
+    setTimeout(() => {
+        let start = Date.now();
+            let timer = setInterval(() => {
+                let timePassed = Date.now() - start;
+            
+                if(timePassed > 300){
+                    clearInterval(timer);
+                }
+            
+                el.style.opacity = timePassed / 300;
+            
+            }, 24)
+    }, 300)
+}
+
+// Befor-After Slider
+$.fn.BeerSlider = function( options ) {
+  options = options || {};
+  return this.each( function () {
+    new BeerSlider( this, options );
+  });
+};
+$( ".beer-slider" ).each( function( index, el ) {
+  $( el ).BeerSlider( {start: $( el ).data( "start" ) } )
+});
+
+
+  });

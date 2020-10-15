@@ -1,66 +1,85 @@
 $fontFugaz : 'Fugaz One', cursive
 $fontNoto : 'Noto Sans JP', sans-serif
 $fontSquada : 'Squada One', cursive
-$activeColor : #ff8800
-    
-    
+$fontLibre : 'Libre Baskerville', serif
+$fontOsvald : 'Oswald', sans-serif;
+$activeColor : #ff5e00
+
 html
     margin: 0 auto
     width: 100%
     
 body
-    max-width: 1366px
     width: 100%
     margin: 0 auto
-
-.navbar-title
-    font-family: $fontFugaz;
-    font-size: 36px
-
-.nav-link-text
-    margin: 0 15px
-    color: #000
-    font-family: $fontNoto;
-    font-weight: 300
-    &:active
-        color: #ff8800
-    &:hover
-        color: #ff8800
-        text-decoration-line: none
-
-.head
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 100%
-    max-height: 768px
-    min-height: 400px
-    height: 600px
-    background-image: url(../img/bg.jpg)
     background-size: contain
     background-repeat: no-repeat
     background-size: cover
     background-position: center
     background-attachment: fixed
+    background-image: url(../img/bg.jpg)
+
+.navbar-title
+    font-family: $fontFugaz;
+    font-size: 36px
+    
+
+.nav-link-text
+    margin: 0 15px
+    color: #fff
+    font-family: $fontNoto
+    font-weight: 500
+    &:active
+        color: #ff8800
+    &:hover
+        color: #ff8800
+        text-decoration-line: none
+    
+.logo
+    filter: invert(1)
+
+.first
+    background-color: #000
+    
+
+.head
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    min-height: 400px
+    height: 100vh
     object-fit: cover
     &-highlight
+        position: absolute
+        left: 0
+        top: 0
         width: 100%
         height: 100%
         display: flex
         justify-content: center
         align-items: center
-        background: rgba(0,0,0,0.5)
+        background-image: url(../img/bg0.jpg)
+        background-size: contain
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        background-attachment: fixed
+        z-index: 0
 
 .img-bg
     width: 100%
     height: 100%
 
 .head-text
+    position: relative
     z-index: 1
-    font-size: 60px
-    font-family: $fontSquada
+    background: rgba(0,0,0,0.5)
+    font-size: 48px
+    font-family: $fontLibre
     color: #fff
-    border-radius: 10px
+    font-weight: 600
     width: 100%
     height: 100%
     display: flex
@@ -69,20 +88,44 @@ body
     align-items: center
     overflow: hidden
     text-align: center
+    padding: 0px 250px
+    &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        width: 100%
+        height: 50px
+        background: linear-gradient(to top, #faf9f877, transparent)
+        z-index: 100000
+
 .words
+    width: 100%
     color: #fff
+    margin-top: 50px
     &-colored
         color: $activeColor
         line-height: 0.8
 
 .second
-    margin-top: 100px
     width: 100%
-    min-height: 270px
+    height: 100%
     &-text
-        font-family: $fontSquada
-        font-size: 30px
+        font-family: $fontOsvald
+        font-weight: 900
+        font-size: 24px
         text-align: center
+    &-container
+        padding: 70px 0
+        background-color: #faf9f8c0
+        height: 100%
+    &::before
+        content: ''
+        position: absolute
+        bottom: top
+        width: 100%
+        height: 3px
+        background: linear-gradient(to bottom, #faf9f8c0, transparent)
+        z-index: 100000
 
 .card-container
     position: relative
@@ -110,8 +153,76 @@ body
         right: -70px
 
 .third
-    margin-top: 50px
+    height: 100%
+    background-color: #0000005b
+    &-container
+        background-color: #f8f9fac0
+.third img
+    height: 500px
+    max-height: 650px
+    width: fit-content
 
+.third-text
+    font-family: $fontOsvald
+    font-size: 30px
+    font-weight: 300
+    color: #353535
+    &-top
+        font-weight: 900
+        font-size: 48px
+        color: #000000
+    &-company-name
+        font-family: $fontFugaz
+        font-weight: 400
+        font-size: 48px
+        color: #000000
+.third-text-list-item
+    padding: 50px 0
+    &-title
+        font-weight: 900
+        font-size: 36px
+        color: $activeColor
+    &-text
+        font-weight: 400
+        font-size: 24px
+        color: #131313
+        margin-top: 10px
+    &-container
+        padding: 0px 30px
+    &:last-child
+        border-bottom: none
+
+.beer-slider
+    width: 100%
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.9)
+    border-radius: 10px
+    & img
+        width: 100%
+
+.beer-reveal img
+    width: 100%
+
+#slider1
+    height: 300px
+
+#slider1 > img
+    height: 300px
+
+.carousel-item
+    width: 100%
+
+.fourth
+    box-shadow: 0px -13px 20px 1px rgba(0,0,0,0.16);
+    border-radius: 5px
+    background: #f8f9fa
+    padding-bottom: 50px
+    &-container-first
+        display: block
+    &-container-second
+        display: none
+
+.prev, .next
+    z-index: 99999
 
 .cards
     display: flex
@@ -158,13 +269,13 @@ body
     height: 40vw
     object-fit: cover
 
-.fourth
+.fifth
+    position: relative
     border-top: 2px solid black
     width: 100%
     height: 100px
     max-height: 200px
     min-height: 75px
-    margin-top: 50px
 
 .contacts
     width: 100%
@@ -174,7 +285,6 @@ body
     align-items: center
     text-align: center
 .phone
-    font-family: $fontNoto
     font-size: 24px
     color: #000000
     &:hover
@@ -185,7 +295,6 @@ body
         color: $activeColor
 
 .email
-    font-family: $fontNoto
     font-size: 24px
     color: #000000
     &:hover
@@ -197,7 +306,137 @@ body
 
 .email-mobile, .phone-mobile
     display: none
+
+.swiper-container 
+    width: 600px
+    height: 100%
+
+
+.btn-call
+    display: none
+    position: fixed
+    right: 40px
+    bottom: -150px
+    max-width: 70px
+    max-height: 70px
+    min-width: 30px
+    min-height: 30px
+    width: 70px
+    height: 70px
+    background-image: url(../img/phone-call.png)
+    background-size: contain
+    border-radius: 50%
+    border: none
+    z-index: 99999
+    &:hover
+        animation: shuffling 1s linear 
+
+.modal, .modal-open
+    overflow-y: scroll
+    padding: 0 0!important
+
+.btn-submit
+    display: inline-block
+    font-weight: 400
+    color: #ffffff
+    text-align: center
+    vertical-align: middle
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    background-color: #ff5e00
+    border: none
+    padding: .375rem .75rem
+    font-size: 1rem
+    line-height: 1.5
+    border-radius: .25rem
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+    &:hover
+        background: #ff4800
+        border: none
+    &:focus
+        border: none
+        outline: none
+        background: #ff3c00
+
+.btn-custom
+    filter: invert(1)
+    background: transparent
+    &:focus
+        outline: none
+.clicked
+    animation: clicking 0.25s linear
+
+.animShow
+    animation: fromBottom 0.3s ease-in-out
     
+.animHide
+    animation: toBottom 0.7s ease-in-out
+
+.shuffled
+    animation: shuffling 1s linear
+
+.bgIn
+    animation: bgIn .3s linear
+
+.bgOut
+    animation: bgOut .1s linear
+    
+@keyframes fromBottom
+    0%
+        bottom: -150px
+        opacity: 0
+    100%
+        bottom: 40px
+        opacity: 1
+    
+@keyframes toBottom
+    0%
+        bottom: 40px
+        opacity: 1
+    100%
+        bottom: -150px
+        opacity: 0
+
+@keyframes clicking 
+  0% 
+    transform: scale(1, 1)
+  49% 
+    transform: scale(1.1, 1.1)
+  51% 
+    transform: scale(1.1, 1.1)
+  100% 
+    transform: scale(1, 1)
+
+@keyframes shuffling
+    0% 
+        transform: rotate(0deg)
+    25% 
+        transform: rotate(30deg)
+    50% 
+        transform: rotate(0deg)
+    75% 
+        transform: rotate(-30deg)
+    100% 
+        transform: rotate(0deg)
+
+@keyframes bgOut
+    0%
+        background: #f8f9fa
+
+    100%
+        background: #f8f9fa00
+
+@keyframes bgIn
+    0%
+        background: #f8f9fa00
+
+    100%
+        background: #f8f9fa
+
+
+        
 
 @media screen and ( max-width: 1200px )
     .img-arrow
@@ -210,24 +449,34 @@ body
         & img
             width: 30px
             height: 30px
+    .navbar-container
+        justify-content: space-between!important
     .head-text
         font-size: 42px
-    .card-container
-
-    .cards
+    .third-text-list-item
+        flex-direction: column  
+        &-container
+            order: 1
+            margin-bottom: 25px
+    .beer-slider
+        order: 2
+    .fourth-container-first
         display: none
+    .fourth-container-second
+        display: block
     .cards-slider
-        display: flex
+        display: block
     .img-portfolio
         min-height: 300px
         height: 56vw
         object-fit: cover
     .second
-        margin-top: 50px
         height: 400px
         min-height: 350px
-    .third
-        margin-top: 50px
+        &-container
+            padding-top: 50px
+    .third-container
+        padding-top: 50px
     
 @media screen and ( max-width: 720px )
     .second-text
@@ -236,7 +485,6 @@ body
         display: none
     .email-mobile, .phone-mobile
         display: flex
-        font-family: $fontNoto
         font-size: 14px
         color: #000000
         &:hover
@@ -245,5 +493,6 @@ body
         &:active
             text-decoration-line: none
             color: $activeColor
-
-        
+    .btn-call
+        width: 50px
+        height: 50px
