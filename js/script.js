@@ -166,12 +166,10 @@ window.addEventListener('load', function() {
 }
 });
 
-// Ivert head navbar while scrolling
+// Invert, scroll and hide head navbar while scrolling
 window.addEventListener('scroll', function() {
       let firstBlock = document.querySelector('.first');
       let firstBlockBottom = firstBlock.getBoundingClientRect().bottom;
-      let thirdBlock = document.querySelector('.third');
-      let thirdBlockTop = thirdBlock.getBoundingClientRect().top;
       let headNavBar = document.querySelector('.navbar');
       let logo = document.querySelector('.logo');
       let navLinkText = document.querySelectorAll('.nav-link-text');
@@ -200,37 +198,10 @@ window.addEventListener('scroll', function() {
           item.addEventListener('mouseout', () => {item.style.color = '#fff'});
         });
       }
-      if(thirdBlockTop < 100){
-        headNavBar.style.opacity = 0;
-        console.log(thirdBlockTop);
-      } 
-      if (thirdBlockTop > 200){
-        headNavBar.style.opacity = 1;
-      }
+      
 });
 
 
-// Show and hide head navbar while scrolling
-window.addEventListener('scroll', function() {
-  
-});
-
-
-// Changing head background
-let headBg = document.querySelector('.head-highlight');
-let count = 0;
-setTimeout(() => {
-
-  setInterval(() => {
-    if(count < 9){
-      count++;
-      bgChange(headBg, count);
-    } else {
-        count = 0;
-        bgChange(headBg, count);
-    }
-  }, 5000);
-}, 2000)
 
 // Hide portfolio galery and add slider galery
 $(window).resize(function(){
@@ -360,38 +331,6 @@ function animShuffle(el){
 
 
 
-
-// Function to change background with animation
-function bgChange(el, n){
-let end = 10000;
-let step = 1000;
-let stepCount = 0;
-
-    let timer1 = setInterval(() => {
-
-        if(stepCount > 9){
-            el.style.backgroundImage = `url(./img/bg${n}.jpg)`;
-            clearInterval(timer1);    
-        }
-        
-        el.style.opacity = step / (end / ((end / 1000) - stepCount));
-        stepCount++;
-    }, 24);
-
-    setTimeout(() => {
-        let start = Date.now();
-            let timer = setInterval(() => {
-                let timePassed = Date.now() - start;
-            
-                if(timePassed > 300){
-                    clearInterval(timer);
-                }
-            
-                el.style.opacity = timePassed / 300;
-            
-            }, 24)
-    }, 300)
-}
 
 // Befor-After Slider
 $.fn.BeerSlider = function( options ) {

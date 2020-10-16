@@ -1,6 +1,6 @@
 <?php
 // несколько получателей
-$to  = 'andriimatviienko@outlook.com';  // обратите внимание на запятую
+$to  = 'andriimatviienko@outlook.com';
 
 // тема письма
 $subject = 'Skontaktuj się ze mną!';

@@ -2,7 +2,8 @@ $fontFugaz : 'Fugaz One', cursive
 $fontNoto : 'Noto Sans JP', sans-serif
 $fontSquada : 'Squada One', cursive
 $fontLibre : 'Libre Baskerville', serif
-$fontOsvald : 'Oswald', sans-serif;
+$fontOsvald : 'Oswald', sans-serif
+$fontMukta : 'Mukta', sans-serif
 $activeColor : #ff5e00
 
 html
@@ -17,7 +18,7 @@ body
     background-size: cover
     background-position: center
     background-attachment: fixed
-    background-image: url(../img/bg.jpg)
+    background-image: url(../img/bg.png)
 
 .navbar-title
     font-family: $fontFugaz;
@@ -30,13 +31,14 @@ body
     font-family: $fontNoto
     font-weight: 500
     &:active
-        color: #ff8800
+        color: $activeColor
     &:hover
-        color: #ff8800
+        color: $activeColor
         text-decoration-line: none
     
 .logo
     filter: invert(1)
+    z-index: 4
 
 .first
     background-color: #000
@@ -49,7 +51,7 @@ body
     align-items: center
     width: 100%
     min-height: 400px
-    height: 100vh
+    height: 150vh
     object-fit: cover
     &-highlight
         position: absolute
@@ -60,7 +62,7 @@ body
         display: flex
         justify-content: center
         align-items: center
-        background-image: url(../img/bg0.jpg)
+        background-image: url(../img/bg4.jpg)
         background-size: contain
         background-repeat: no-repeat
         background-size: cover
@@ -96,7 +98,7 @@ body
         width: 100%
         height: 50px
         background: linear-gradient(to top, #faf9f877, transparent)
-        z-index: 100000
+        z-index: 1
 
 .words
     width: 100%
@@ -116,16 +118,9 @@ body
         text-align: center
     &-container
         padding: 70px 0
-        background-color: #faf9f8c0
+        background-color:#f8f9fada
         height: 100%
-    &::before
-        content: ''
-        position: absolute
-        bottom: top
-        width: 100%
-        height: 3px
-        background: linear-gradient(to bottom, #faf9f8c0, transparent)
-        z-index: 100000
+
 
 .card-container
     position: relative
@@ -151,19 +146,19 @@ body
         transform: scaleY(-1) rotate(-40deg)
         top: -50px
         right: -70px
-
 .third
     height: 100%
-    background-color: #0000005b
-    &-container
-        background-color: #f8f9fac0
+    background-color: #f8f9faf5
+    &-link
+        position: relative
+        top: 10px
 .third img
     height: 500px
     max-height: 650px
     width: fit-content
 
 .third-text
-    font-family: $fontOsvald
+    font-family: $fontLibre
     font-size: 30px
     font-weight: 300
     color: #353535
@@ -182,9 +177,12 @@ body
         font-weight: 900
         font-size: 36px
         color: $activeColor
+        text-shadow: 1px 1px 2px #0000005d
+        font-family: $fontLibre
     &-text
+        font-family: $fontMukta
         font-weight: 400
-        font-size: 24px
+        font-size: 22px
         color: #131313
         margin-top: 10px
     &-container
@@ -194,10 +192,10 @@ body
 
 .beer-slider
     width: 100%
-    box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.9)
-    border-radius: 10px
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+    border-radius: 3px
     & img
-        width: 100%
+        width: fit-content
 
 .beer-reveal img
     width: 100%
@@ -286,6 +284,7 @@ body
     text-align: center
 .phone
     font-size: 24px
+    font-weight: 600
     color: #000000
     &:hover
         text-decoration-line: none
@@ -296,6 +295,7 @@ body
 
 .email
     font-size: 24px
+    font-weight: 600
     color: #000000
     &:hover
         text-decoration-line: none
