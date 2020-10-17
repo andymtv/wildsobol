@@ -170,11 +170,13 @@ window.addEventListener('load', function() {
 window.addEventListener('scroll', function() {
       let firstBlock = document.querySelector('.first');
       let firstBlockBottom = firstBlock.getBoundingClientRect().bottom;
+      let thirdBlock = document.querySelector('.second');
+      let thirdBlockTop = thirdBlock.getBoundingClientRect().top;
       let headNavBar = document.querySelector('.navbar');
       let logo = document.querySelector('.logo');
       let navLinkText = document.querySelectorAll('.nav-link-text');
 
-      if(firstBlockBottom < 500)
+      if(firstBlockBottom < 750)
       {
         logo.style.filter = 'invert(0)';
         btnNavToggler.style.filter = 'invert(0)';
@@ -187,7 +189,7 @@ window.addEventListener('scroll', function() {
         });
 
       } 
-      if (firstBlockBottom > 600){
+      if (firstBlockBottom > 900){
         logo.style.filter = 'invert(1)';
         btnNavToggler.style.filter = 'invert(1)';
         headNavBar.classList.remove('bgIn');
@@ -198,7 +200,12 @@ window.addEventListener('scroll', function() {
           item.addEventListener('mouseout', () => {item.style.color = '#fff'});
         });
       }
-      
+      if(thirdBlockTop < 150){
+        headNavBar.style.opacity = 0;
+      } 
+      if (thirdBlockTop > 250){
+        headNavBar.style.opacity = 1;
+      }
 });
 
 

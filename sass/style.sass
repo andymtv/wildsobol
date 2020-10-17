@@ -1,8 +1,6 @@
 $fontFugaz : 'Fugaz One', cursive
-$fontNoto : 'Noto Sans JP', sans-serif
-$fontSquada : 'Squada One', cursive
-$fontLibre : 'Libre Baskerville', serif
-$fontOsvald : 'Oswald', sans-serif
+$fontQuicksand : 'Quicksand', sans-serif;
+$fontCarter : 'Carter One', cursive;
 $fontMukta : 'Mukta', sans-serif
 $activeColor : #ff5e00
 
@@ -13,12 +11,7 @@ html
 body
     width: 100%
     margin: 0 auto
-    background-size: contain
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: center
-    background-attachment: fixed
-    background-image: url(../img/bg.png)
+    background: #f8f9fa
 
 .navbar-title
     font-family: $fontFugaz;
@@ -26,10 +19,10 @@ body
     
 
 .nav-link-text
-    margin: 0 15px
+    margin: 0 10px
     color: #fff
-    font-family: $fontNoto
-    font-weight: 500
+    font-family: $fontQuicksand
+    font-weight: 600
     &:active
         color: $activeColor
     &:hover
@@ -62,11 +55,10 @@ body
         display: flex
         justify-content: center
         align-items: center
-        background-image: url(../img/bg4.jpg)
-        background-size: contain
+        background-image: url(../img/bg5.jpg)
         background-repeat: no-repeat
         background-size: cover
-        background-position: center
+        background-position: 0 -100px
         background-attachment: fixed
         z-index: 0
 
@@ -79,7 +71,7 @@ body
     z-index: 1
     background: rgba(0,0,0,0.5)
     font-size: 48px
-    font-family: $fontLibre
+    font-family: $fontQuicksand
     color: #fff
     font-weight: 600
     width: 100%
@@ -91,14 +83,7 @@ body
     overflow: hidden
     text-align: center
     padding: 0px 250px
-    &::before
-        content: ''
-        position: absolute
-        bottom: 0
-        width: 100%
-        height: 50px
-        background: linear-gradient(to top, #faf9f877, transparent)
-        z-index: 1
+
 
 .words
     width: 100%
@@ -110,27 +95,99 @@ body
 
 .second
     width: 100%
-    height: 100%
+    height: 110vh
     &-text
-        font-family: $fontOsvald
+        color: $activeColor
+        font-family: $fontMukta
         font-weight: 900
-        font-size: 24px
+        font-size: 30px
         text-align: center
+        
     &-container
-        padding: 70px 0
-        background-color:#f8f9fada
+        background-color:#f8f9fa
         height: 100%
 
+.second-text-title
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 5%
+    background: rgba(0,0,0,0.6)
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    color: #fff
+    font-family: $fontQuicksand
+    font-weight: 600
+    font-size: 18px
+.row-second
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: nowrap
 
-.card-container
+
+.card-block
     position: relative
-
-    
-.card-image
-    transition-duration: 0.3s
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    transition: all .3s
+    flex-basis: 25%
     &:hover
-        transform: scale(1.3, 1.3)
-        transition-duration: 0.3s
+        transition: all .3s
+        flex-basis: 75%
+    &-content
+        width: 100%
+        height: 30%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: rgba(0,0,0,0.6)
+
+
+#card-block
+    &-1
+        position: relative
+        background-image: url('../img/creative.jpg')
+        background-attachment: fixed
+        background-size: cover
+        background-position: -450px 0
+        background-repeat: no-repeat
+    &-2
+        position: relative
+        background-image: url('../img/plan.jpg')
+        background-attachment: fixed
+        background-size: cover
+        background-position: 0 0
+        background-repeat: no-repeat
+    &-3
+        position: relative
+        background-image: url('../img/create.jpg')
+        background-attachment: fixed
+        background-size: cover
+        background-position: 0 0
+        background-repeat: no-repeat
+    &-4
+        position: relative
+        background-image: url('../img/happy.jpg')
+        background-attachment: fixed
+        background-size: cover
+        background-position: 540px -100px
+        background-repeat: no-repeat
+
+.card-block-img
+    position: absolute   
+// .card-image
+//     transition-duration: 0.3s
+//     &:hover
+//         transform: scale(1.3, 1.3)
+//         transition-duration: 0.3s
 
 .img-arrow
     position: absolute
@@ -148,22 +205,23 @@ body
         right: -70px
 .third
     height: 100%
-    background-color: #f8f9faf5
+    background-color: #f8f9fa 
     &-link
         position: relative
-        top: 10px
+        top: -50px
 .third img
     height: 500px
     max-height: 650px
     width: fit-content
 
 .third-text
-    font-family: $fontLibre
+    font-family: $fontQuicksand
     font-size: 30px
     font-weight: 300
     color: #353535
     &-top
-        font-weight: 900
+        font-family: $fontCarter
+        font-weight: 400
         font-size: 48px
         color: #000000
     &-company-name
@@ -174,15 +232,15 @@ body
 .third-text-list-item
     padding: 50px 0
     &-title
-        font-weight: 900
         font-size: 36px
         color: $activeColor
         text-shadow: 1px 1px 2px #0000005d
-        font-family: $fontLibre
+        font-family: $fontQuicksand
+        font-weight: 700
     &-text
         font-family: $fontMukta
         font-weight: 400
-        font-size: 22px
+        font-size: 20px
         color: #131313
         margin-top: 10px
     &-container
