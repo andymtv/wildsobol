@@ -94,7 +94,6 @@ $(window).ready(function(){
 let btnNavToggler = document.querySelector('.navbar-toggler');
 let navCollapse = document.querySelector('.navbar-collapse');
 btnNavToggler.addEventListener('click', () => {
-    console.log(btnNavToggler.getAttribute('aria-expanded'));
     let logo = document.querySelector('.logo');
     setTimeout(() => {
       if(btnNavToggler.getAttribute('aria-expanded') == 'true'){
@@ -113,12 +112,12 @@ btnNavToggler.addEventListener('click', () => {
 let btnCall = document.querySelector('.btn-call');
 
 // Add click animation on Call Button
-btnCall.addEventListener('click', () => {
-  btnCall.classList.add('clicked');
-    setTimeout(() => {
-      btnCall.classList.remove('clicked');
-      }, 300);
-    });
+// btnCall.addEventListener('click', () => {
+//   btnCall.classList.add('clicked');
+//     setTimeout(() => {
+//       btnCall.classList.remove('clicked');
+//       }, 150);
+//     });
 
 // Add shuffle animation on Call Button
 window.addEventListener('load', () => {
@@ -132,7 +131,7 @@ window.addEventListener('load', () => {
 });
 
 // Shuffle Call Button time after time
-setInterval(() => {
+let shuffleInterval = setInterval(() => {
   animShuffle(btnCall);
 }, 3000);
 
@@ -159,7 +158,6 @@ window.addEventListener('load', function() {
     logo.style.filter = 'invert(1)';
     btnNavToggler.style.filter = 'invert(1)';
     headNavBar.style.backgroundColor = '#f8f9fa00';
-    console.log(headNavBar.style.background);
     navLinkText.forEach(item => {
       item.style.color = '#fff';
   });
@@ -175,8 +173,9 @@ window.addEventListener('scroll', function() {
       let headNavBar = document.querySelector('.navbar');
       let logo = document.querySelector('.logo');
       let navLinkText = document.querySelectorAll('.nav-link-text');
+      console.log(firstBlockBottom);
 
-      if(firstBlockBottom < 750)
+      if(firstBlockBottom < 725)
       {
         logo.style.filter = 'invert(0)';
         btnNavToggler.style.filter = 'invert(0)';
@@ -189,7 +188,7 @@ window.addEventListener('scroll', function() {
         });
 
       } 
-      if (firstBlockBottom > 900){
+      if (firstBlockBottom > 800){
         logo.style.filter = 'invert(1)';
         btnNavToggler.style.filter = 'invert(1)';
         headNavBar.classList.remove('bgIn');
@@ -207,8 +206,6 @@ window.addEventListener('scroll', function() {
         headNavBar.style.opacity = 1;
       }
 });
-
-
 
 // Hide portfolio galery and add slider galery
 $(window).resize(function(){
@@ -298,22 +295,11 @@ $(window).resize(function(){
         $('script').before($(modalWithSlider))
     }   
     if($(window).width() <= 900){
-        $('.modal').detach()
+        $('#ModalCenter').detach()
     } 
  
     });
 
-
-
-// Showing Contact Modal Window after click on button
-let contactModal = document.querySelector('#contactModal');
-btnCall.addEventListener('click', () => {
-  setTimeout(() => {
-      if(contactModal.classList.contains('showed')){
-    btnCall.style.display = 'none';
-  }
-  },500);
-});
 
 
 // Function to make PopUpFromBottom animation
@@ -323,7 +309,19 @@ function animFromBottom(el){
     el.style.bottom = '40px';
     setTimeout(() => {
       el.classList.remove('animShow');
-    }, 2000)
+    }, 300)
+}
+
+// Function to make HideToBottom animation
+function animToBottom(el){
+  setTimeout(() => {
+    el.classList.add('animHide');
+    setTimeout(() => {
+      el.classList.remove('animHide');
+      el.style.bottom = '-150px';
+      el.style.display = 'none';
+    }, 300);
+  }, 250)
 }
 
 // Function to make shuffle animation
@@ -331,13 +329,118 @@ function animShuffle(el){
     el.classList.add('shuffled');
       setTimeout(() => {
         el.classList.remove('shuffled');
-      }, 2000);
+      }, 1100);
 }
 
 
+// Sending email without reloading page (AJAX)
+let btnSend = document.querySelector('.btn-submit');
+
+btnSend.addEventListener('click', e => {
+  sendEmail();
+  e.preventDefault();
+});
+
+// Sending mail function
+function sendEmail(){
+  // Getting all of inputs from contact form
+  let name = document.querySelector('input[name="name"]').value;
+  let subject = document.querySelector('input[name="subject"]').value;
+  let email = document.querySelector('input[name="email"]').value;
+  let phone = document.querySelector('input[name="phone"]').value;
+  let message = document.querySelector('textarea[name="message"]').value;
+
+  //Checking if inputs aren't empty
+  if(name == '' || subject == '' && email == '' || message == '')
+  {
+    //If at least one form is empty - show warning message
+    let msg = "Prosimy wypełnić puste miejsca";
+
+    document.querySelector('.contact-alert-message').innerHTML = 
+    `<div class="alert alert-danger">${msg}</div>`;
+  } 
+  else
+  {
+    //If aren't empty - show success message
+    let msg = "Wiadomość została wysłana";
+
+    document.querySelector('.contact-alert-message').innerHTML = `<div class="alert alert-success">${msg}</div>`;
+
+    //Creating new FormData object
+    let formdata = new FormData();
+    formdata.append('email', email);
+    formdata.append('phone', phone);
+    formdata.append('name', name);
+    formdata.append('subject', subject);
+    formdata.append('message', message);
+    
+    //Create XMLHttpRequest object
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onload = function(){
+      if(this.status == 200){
+        let msg = "Wiadomość została wysłana";
+
+        document.querySelector('.contact-alert-message').innerHTML = `<div class="alert alert-success">${msg}</div>`;
+      }
+    }
+
+    xhr.open('POST', '../sendEmail.php', true);
+
+    xhr.send(formdata);
+  }
+}
 
 
+// Initialize Contact Modal WIndow and Close Button
+let contactModal = document.querySelector('#contactModal');
+let btnClose = document.querySelector('.close');
 
+
+// Show and hide Call Button if Contact Modal Form is showing or isn't.
+btnCall.addEventListener('click', () => {
+  clearInterval(shuffleInterval);
+  if(btnCall.classList.contains('shuffled')){
+    btnCall.classList.remove('shuffled');
+    setTimeout(() => {
+      if(contactModal.style.display == 'block'){
+        animToBottom(btnCall);
+      }
+    }, 200)
+  } else {
+    setTimeout(() => {
+      if(contactModal.style.display == 'block'){
+        animToBottom(btnCall);
+      }
+    }, 200)
+  }
+  
+});
+
+//Show Call Button after clicking on Contact Modal Close Button
+btnClose.addEventListener('click', () => {
+  shuffleInterval = setInterval(() => {
+    animShuffle(btnCall);
+  }, 3000);
+  setTimeout(() => {
+    if(contactModal.style.display == 'none'){
+      animFromBottom(btnCall);
+    }
+  }, 300);
+})
+
+//Show Call Button after clicking somewhere but not on Contact Modal
+window.addEventListener('click', () => {
+  setTimeout(() => {
+    if(contactModal.style.display == 'none'){
+      shuffleInterval = setInterval(() => {
+        animShuffle(btnCall);
+      }, 3000);
+      animFromBottom(btnCall);
+    }
+  }, 300);
+});
 
 // Befor-After Slider
 $.fn.BeerSlider = function( options ) {
